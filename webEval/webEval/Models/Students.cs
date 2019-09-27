@@ -20,4 +20,17 @@ namespace webEval.Models
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime birthday { get; set; }
     }
+    public class Grade
+    {   [Key]
+        public int GradeID { get; set; }
+        [Required]
+        public int studentID { get; set; }
+        [Required]
+        public string Subject { get; set; }
+        [Required]
+        [Range(0,100)]
+        public int Score { get; set; }
+        public Students Students { get; set; }
+
+    }
 }
